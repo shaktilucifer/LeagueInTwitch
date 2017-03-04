@@ -16,7 +16,8 @@
 <div ng-app="twitchApp">
 	<div ng-controller="twitchController">
 		<div ng-repeat="name in streamNames">
-		 <b> {{name}} </b>
+		 <b> {{name}} </b> <p>{{streamStatus[$index]}}</p>
+		 <hr/>
 		</div>
 	</div>
 
