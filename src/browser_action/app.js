@@ -4,7 +4,7 @@ app.controller('twitchController', function($scope,$http) {
       method: 'GET',
       url: 'https://api.twitch.tv/kraken/streams?q=league%20of%20legends&limit=30',
       headers: {
-        'Client-ID': 'my6s8wrko20vyym17bpy74xkavg6m3'
+        'Client-ID': ''
       }
     }).then(function successCallback(response) {
         var streams = response.data.streams;
