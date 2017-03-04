@@ -15,8 +15,9 @@
 <h1>Twitch LoL</h1>
 <div ng-app="twitchApp">
 	<div ng-controller="twitchController">
-	{{testing}}
-
+		<div ng-repeat="n in streamNames">
+		  {{n}}
+		</div>
 	</div>
 
 
