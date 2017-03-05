@@ -4,7 +4,7 @@
 	<div ng-app="twitchApp">
 		<div ng-controller="twitchController">
 			<div ng-repeat="name in streamNames">
-				<b> {{name}} </b>
+				<a href="" ng-click="safeUrlChromeTabs('{{streamUrl[$index]}}')"><b> {{name}} </b></a>	
 				<p>{{streamStatus[$index]}}</p>
 				<hr/>
 			</div>

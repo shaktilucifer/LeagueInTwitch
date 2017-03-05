@@ -14,16 +14,24 @@ app.controller('twitchController', function($scope, $http) {
         var streams = response.data.streams;
         var streamNames = [];
         var streamStatus = [];
+        var streamUrl = [];
         angular.forEach(streams, function(value, key) {
             streamNames.push(value.channel.display_name);
             streamStatus.push(value.channel.status);
+            streamUrl.push(value.channel.url)
         });
-        console.log(streamNames);
+        console.log(streams);
         $scope.streamNames = streamNames;
         $scope.streamStatus = streamStatus;
+        $scope.streamUrl = streamUrl;
     }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
     });
+
+    $scope.safeUrlChromeTabs = function(href){
+      console.log(href);
+      chrome.tabs.create({url: href});
+    };
 
 });
