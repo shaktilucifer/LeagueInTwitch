@@ -2,13 +2,13 @@ var app = angular.module('twitchApp', []);
 app.controller('twitchController', function($scope, $http) {
     $http({
         method: 'GET',
-        url: 'https://api.twitch.tv/kraken/streams',
+        url: config.url,
         params: {
-            game: "league of legends",
-            limit: 19
+            game: config.game,
+            limit: config.limit
         },
         headers: {
-            'Client-ID': ''
+            'Client-ID': config.clientId
         }
     }).then(function successCallback(response) {
         var streams = response.data.streams;
