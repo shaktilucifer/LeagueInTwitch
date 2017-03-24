@@ -15,15 +15,17 @@ app.controller('twitchController', function($scope, $http) {
         var streamNames = [];
         var streamStatus = [];
         var streamUrl = [];
+        var streamLogo = [];
         angular.forEach(streams, function(value, key) {
             streamNames.push(value.channel.display_name);
             streamStatus.push(value.channel.status);
-            streamUrl.push(value.channel.url)
+            streamUrl.push(value.channel.url);
+            streamLogo.push(value.channel.logo);
         });
-        console.log(streams);
         $scope.streamNames = streamNames;
         $scope.streamStatus = streamStatus;
         $scope.streamUrl = streamUrl;
+        $scope.streamLogo = streamLogo;
     }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.

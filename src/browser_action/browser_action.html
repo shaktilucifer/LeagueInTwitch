@@ -5,6 +5,7 @@
 		<div ng-controller="twitchController">
 			<div ng-repeat="name in streamNames">
 				<a href="{{streamUrl[$index]}}" target="_blank"><b> {{name}} </b></a>
+				<img src="{{streamLogo[$index]}}" width="50px"/>
 				<p>{{streamStatus[$index]}}</p>
 				<hr/>
 			</div>
