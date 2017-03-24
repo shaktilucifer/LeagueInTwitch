@@ -28,10 +28,15 @@ app.controller('twitchController', function($scope, $http) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
     });
-
-    $scope.safeUrlChromeTabs = function(href){
-      console.log(href);
-      chrome.tabs.create({url: href});
-    };
-
+    //Enable links from pop up
+    document.getElementsByTagName("BODY")[0].onclick = function(e) {
+        e = e || event
+        var target = e.target || e.srcElement
+        if (target.nodeName != 'A') return
+        var href = target.href
+        chrome.tabs.create({
+            url: href
+        });
+        return false;
+    }
 });
