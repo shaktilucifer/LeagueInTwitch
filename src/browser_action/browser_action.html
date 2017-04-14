@@ -3,15 +3,19 @@
 	<h1>Twitch LoL</h1>
 	<div ng-app="twitchApp">
 		<div ng-controller="twitchController">
-			<div ng-repeat="name in streamNames">
-				<div>
-					<h1><a href="{{streamUrl[$index]}}" target="_blank"><b> {{name}} </b></h1>
+			<ul>
+				<div ng-repeat="name in streamNames">
+					<div>
+						<li>
+							<h1><a href="{{streamUrl[$index]}}" target="_blank"><b> {{name}} </b></h1>
 					<img class="roundedImage" src="{{streamLogo[$index]}}" width="50px" />
 					</a>
-					<p>{{streamStatus[$index]}}</p>
+								<p>{{streamStatus[$index]}}</p>
+						</li>
+					</div>
+					<hr/>
 				</div>
-				<hr/>
-			</div>
+			</ul>
 		</div>
 	</div>
 </div>
